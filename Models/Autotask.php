@@ -8,6 +8,8 @@
  * @author	MekDrop <mekdrop@gmail.com>
  */
 
+namespace ImpressCMS\Modules\System\Models;
+
 /* this is needed because this class is loaded outside of the admin area, too */
 icms_loadLanguageFile("system", "autotasks", true);
 
@@ -27,7 +29,7 @@ icms_loadLanguageFile("system", "autotasks", true);
  * @property string $sat_type           Type (custom or module)
  * @property int    $sat_addon_id       Module ID
  */
-class mod_system_Autotasks extends \ImpressCMS\Core\Models\AbstractExtendedModel {
+class Autotask extends \ImpressCMS\Core\Models\AbstractExtendedModel {
 
 	public $content = false;
 

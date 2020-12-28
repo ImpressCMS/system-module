@@ -8,6 +8,7 @@
  * @author	Sina Asghari (aka stranger) <pesian_stranger@users.sourceforge.net>
  */
 
+namespace ImpressCMS\Modules\System\Models;
 use ImpressCMS\Core\Models\UserHandler;
 
 /**
@@ -25,7 +26,7 @@ use ImpressCMS\Core\Models\UserHandler;
  *
  * @property string $name       Name
  */
-class mod_system_Rating extends \ImpressCMS\Core\Models\AbstractExtendedModel {
+class Rating extends \ImpressCMS\Core\Models\AbstractExtendedModel {
 
 	/** */
 	public $_modulePlugin = false;

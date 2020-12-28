@@ -7,6 +7,8 @@
  * @since	2.0
  */
 
+namespace ImpressCMS\Modules\System\Models;
+
 /**
  * The tag object - for tagging content
  *
@@ -17,7 +19,7 @@
  * @property int    $status Status of the tag - enabled, disabled
  * @property int    $count  The number of occurrences of the tag across the site
  */
-class mod_system_Tags extends icms_ipf_seo_Object {
+class Tag extends icms_ipf_seo_Object {
 
 	/**
 	 * Construct the tag object

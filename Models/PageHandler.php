@@ -6,6 +6,8 @@
  * @license	LICENSE.txt
  */
 
+namespace ImpressCMS\Modules\System\Models;
+
 use ImpressCMS\Core\Models\AbstractExtendedHandler;
 
 /**
@@ -13,7 +15,7 @@ use ImpressCMS\Core\Models\AbstractExtendedHandler;
  *
  * @package     ImpressCMS\Modules\System\Class\Pages
  */
-class mod_system_PagesHandler extends icms_data_page_Handler {
+class PageHandler extends icms_data_page_Handler {
 
 	/** */
 	private $modules_name;

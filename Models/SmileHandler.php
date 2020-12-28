@@ -6,6 +6,8 @@
  * @license		GNU General Public License (GPL) <http://www.gnu.org/licenses/old-licenses/gpl-2.0.html>
  */
 
+namespace ImpressCMS\Modules\System\Models;
+
 /**
  * Handler for modules
  *
@@ -14,7 +16,7 @@
  * @todo	Convert to OOP
  * @package     ImpressCMS\Modules\System\Class\Smiles
  */
-class mod_system_SmiliesHandler extends \ImpressCMS\Core\Models\AbstractExtendedHandler {
+class SmileHandler extends \ImpressCMS\Core\Models\AbstractExtendedHandler {
 
 	/**
 	 * Construct the handler

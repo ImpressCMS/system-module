@@ -1,32 +1,33 @@
 <?php
 /**
- * wrapper class for handling comments
+ * Wrapper for administering groups
  *
  * @copyright 	The ImpressCMS Project <http://www.impresscms.org>
  * @license		GNU General Public License (GPL) <http://www.gnu.org/licenses/old-licenses/gpl-2.0.html>
- * @package     ImpressCMS\Modules\System\Class\Comments
+ * @package     ImpressCMS\Modules\System\Class\Groups
  */
 
+namespace ImpressCMS\Modules\System\Models;
+
 /**
- * Handler for comments
+ * Handles group administration
  *
  * @category	ICMS
  * @package		Administration
- * @subpackage	Comments
+ * @subpackage	Groups
  */
-class mod_system_CommentsHandler extends icms_data_comment_Handler {
+class GroupHandler extends icms_member_group_Handler {
 
 	/**
+	 * Constructs the handler class for groups
 	 *
-	 * Constructs the comment handler
-	 *
-	 * @param obj $db	database instance (@see icms_db_Factory::instance)
+	 * @param  obj $db	database instance (@see icms_db_Factory::instance)
 	 */
 	public function __construct(&$db) {
 		parent::__construct($db);
 		/* overriding the default table name
 		 * @todo	complete refactoring and use standard table name
 		 */
-		$this->table = $this->db->prefix('xoopscomments');
+		$this->table = $this->db->prefix('groups');
 	}
 }

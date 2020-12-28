@@ -8,6 +8,8 @@
  * @author	Sina Asghari (aka stranger) <pesian_stranger@users.sourceforge.net>
  */
 
+namespace ImpressCMS\Modules\System\Models;
+
 use ImpressCMS\Core\Models\AbstractExtendedHandler;
 
 /**
@@ -15,7 +17,7 @@ use ImpressCMS\Core\Models\AbstractExtendedHandler;
  *
  * @package ImpressCMS\Modules\System\Class\Adsense
  */
-class mod_system_AdsenseHandler extends AbstractExtendedHandler {
+class AdsenseHandler extends AbstractExtendedHandler {
 	public $adFormats = array();
 	private $_adFormatsList = array();
 	private $_objects = false;

@@ -8,6 +8,8 @@
  * @author	Sina Asghari (aka stranger) <pesian_stranger@users.sourceforge.net>
  */
 
+namespace ImpressCMS\Modules\System\Models;
+
 /**
  * AdSense object - Google AdSense
  *
@@ -26,8 +28,9 @@
  * @property string $color_text         Text color
  * @property string $style              Styles
  */
-class mod_system_Adsense extends \ImpressCMS\Core\Models\AbstractExtendedModel {
-	public $content = false;
+class Adsense extends \ImpressCMS\Core\Models\AbstractExtendedModel {
+
+    public $content = false;
 
 	/**
 	 * Constructor

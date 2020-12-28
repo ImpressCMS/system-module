@@ -9,6 +9,8 @@
  * @package     ImpressCMS\Modules\System\Class\CustomTag
  */
 
+namespace ImpressCMS\Modules\System\Models;
+
 defined('ICMS_CUSTOMTAG_TYPE_XCODES') || define('ICMS_CUSTOMTAG_TYPE_XCODES', 1);
 defined('ICMS_CUSTOMTAG_TYPE_HTML') || define('ICMS_CUSTOMTAG_TYPE_HTML', 2);
 defined('ICMS_CUSTOMTAG_TYPE_PHP') || define('ICMS_CUSTOMTAG_TYPE_PHP', 3);
@@ -30,7 +32,7 @@ defined('ICMS_CUSTOMTAG_TYPE_PHP') || define('ICMS_CUSTOMTAG_TYPE_PHP', 3);
  * @property int    $doxcode
  * @property int    $dosmiley
  */
-class mod_system_Customtag extends \ImpressCMS\Core\Models\AbstractExtendedModel {
+class CustomTag extends \ImpressCMS\Core\Models\AbstractExtendedModel {
 	public $content = false;
 	public $evaluated = false;
 

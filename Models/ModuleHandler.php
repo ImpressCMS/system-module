@@ -7,13 +7,15 @@
  * @package     ImpressCMS\Modules\System\Class\Modules
  */
 
+namespace ImpressCMS\Modules\System\Models;
+
 /**
  * Handler for modules
  * @category	ICMS
  * @package		Administration
  * @subpackage	Modules
  */
-class mod_system_ModulesHandler extends icms_module_Handler {
+class ModuleHandler extends icms_module_Handler {
 
 	/**
 	 * Constructs the handler for modules

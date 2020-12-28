@@ -9,6 +9,9 @@
  * @author	Gustavo Pilla (aka nekro) <nekro@impresscms.org>
  * @author	modified by UnderDog <underdog@impresscms.org>
  */
+
+namespace ImpressCMS\Modules\System\Models;
+
 /**
  * System positions Handler Class
  *
@@ -18,7 +21,7 @@
  * @since	ImpressCMS 1.2
  * @author	Gustavo Pilla (aka nekro) <nekro@impresscms.org>
  */
-class mod_system_PositionsHandler extends icms_view_block_position_Handler {
+class BlockPositionHandler extends icms_view_block_position_Handler {
 
 	/**
 	 * Constructor

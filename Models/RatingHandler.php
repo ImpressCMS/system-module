@@ -8,12 +8,14 @@
  * @author	Sina Asghari (aka stranger) <pesian_stranger@users.sourceforge.net>
  */
 
+namespace ImpressCMS\Modules\System\Models;
+
 /**
  * Handler for the ratings object
  *
  * @package     ImpressCMS\Modules\System\Class\Rating
  */
-class mod_system_RatingHandler extends \ImpressCMS\Core\Models\AbstractExtendedHandler {
+class RatingHandler extends \ImpressCMS\Core\Models\AbstractExtendedHandler {
 
 	public $_rateOptions = array();
 	public $_moduleList = false;

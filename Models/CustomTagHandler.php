@@ -9,17 +9,18 @@
  * @package     ImpressCMS\Modules\System\Class\CustomTag
  */
 
+namespace ImpressCMS\Modules\System\Models;
+
 defined('ICMS_CUSTOMTAG_TYPE_XCODES') || define('ICMS_CUSTOMTAG_TYPE_XCODES', 1);
 defined('ICMS_CUSTOMTAG_TYPE_HTML') || define('ICMS_CUSTOMTAG_TYPE_HTML', 2);
 defined('ICMS_CUSTOMTAG_TYPE_PHP') || define('ICMS_CUSTOMTAG_TYPE_PHP', 3);
-
 
 /**
  * Handler for the custom tag object
  *
  * @package     ImpressCMS\Modules\System\Class\CustomTag
  */
-class mod_system_CustomtagHandler extends \ImpressCMS\Core\Models\AbstractExtendedHandler {
+class CustomTagHandler extends \ImpressCMS\Core\Models\AbstractExtendedHandler {
 	private $_objects = false;
 
 	/**

@@ -3,7 +3,15 @@
   "description": "For administration of core settings of the site.",
   "type": "impresscms-module",
   "license": "GPL-2.0-or-later",
-  "require": {},
+  "require": {
+    "typo3/class-alias-loader": "^1.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "ImpressCMS\\Modules\\System\\Extensions\\": "./Extensions/",
+      "ImpressCMS\\Modules\\System\\Models\\": "./Models/"
+    }
+  },
   "extra": {
     "credits": "The ImpressCMS Project",
     "icon": {
@@ -411,6 +419,30 @@
         "file": "system_blank.html",
         "description": ""
       }
+    },
+    "services": {
+      "\\ImpressCMS\\Modules\\System\\Extensions\\WaitingInfoGetter\\InactiveUsersWaitingInfoGetter": {
+        "arguments": [
+          "db"
+        ],
+        "tags": [
+          "module.system.waiting-info-getter"
+        ]
+      },
+      "\\ImpressCMS\\Modules\\System\\Extensions\\WaitingInfoGetter\\CommentsWaitingInfoGetter": {
+        "arguments": [
+          "db"
+        ],
+        "tags": [
+          "module.system.waiting-info-getter"
+        ]
+      }
+    },
+    "typo3/class-alias-loader": {
+      "class-alias-maps": [
+        "include/deprecated_class_aliases.php"
+      ],
+      "always-add-alias-loader": true
     }
   }
 }

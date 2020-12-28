@@ -8,8 +8,7 @@
  * @author		Sina Asghari (aka stranger) <pesian_stranger@users.sourceforge.net>
  */
 
-icms_loadLanguageFile("system", "common");
-icms_loadLanguageFile("system", "userrank", true);
+namespace ImpressCMS\Modules\System\Models;
 
 /**
  * Handler for the user ranks object
@@ -17,7 +16,7 @@ icms_loadLanguageFile("system", "userrank", true);
  * @package		System
  * @subpackage	Users
  */
-class mod_system_UserrankHandler extends \ImpressCMS\Core\Models\AbstractExtendedHandler {
+class UserRankHandler extends \ImpressCMS\Core\Models\AbstractExtendedHandler {
 
 	/** */
 	public $objects = false;
@@ -28,6 +27,9 @@ class mod_system_UserrankHandler extends \ImpressCMS\Core\Models\AbstractExtende
 	 * @param object $db
 	 */
 	public function __construct($db) {
+        icms_loadLanguageFile("system", "common");
+        icms_loadLanguageFile("system", "userrank", true);
+
 		global $icmsConfigUser;
 		parent::__construct($db, "userrank", "rank_id", "rank_title", "", "system");
 		$this->table = $this->db->prefix("ranks");

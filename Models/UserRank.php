@@ -8,6 +8,8 @@
  * @author		Sina Asghari (aka stranger) <pesian_stranger@users.sourceforge.net>
  */
 
+namespace ImpressCMS\Modules\System\Models;
+
 icms_loadLanguageFile("system", "common");
 icms_loadLanguageFile("system", "userrank", true);
 
@@ -17,7 +19,7 @@ icms_loadLanguageFile("system", "userrank", true);
  * @package		System
  * @subpackage	Users
  */
-class mod_system_Userrank extends \ImpressCMS\Core\Models\AbstractExtendedModel {
+class UserRank extends \ImpressCMS\Core\Models\AbstractExtendedModel {
 
 	/** */
 	public $content = false;

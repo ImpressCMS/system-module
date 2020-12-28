@@ -9,6 +9,8 @@
  * @author	Rodrigo Pereira Lima (aka therplima) <therplima@impresscms.org>
  */
 
+namespace ImpressCMS\Modules\System\Models;
+
 /**
  * System Block Configuration Object Class
  *
@@ -16,7 +18,7 @@
  * @since   ImpressCMS 1.2
  * @author  Gustavo Pilla (aka nekro) <nekro@impresscms.org>
  */
-class mod_system_Blocks extends icms_view_block_Object {
+class Block extends icms_view_block_Object {
 
 	/**
 	 * Constructor

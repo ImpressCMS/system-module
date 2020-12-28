@@ -1,23 +1,26 @@
 <?php
 /**
- * wrapper class for handling the avatars
+ * wrapper class for handling comments
  *
  * @copyright 	The ImpressCMS Project <http://www.impresscms.org>
  * @license		GNU General Public License (GPL) <http://www.gnu.org/licenses/old-licenses/gpl-2.0.html>
- * @package     ImpressCMS\Modules\System\Class\Avatars
+ * @package     ImpressCMS\Modules\System\Class\Comments
  */
 
+namespace ImpressCMS\Modules\System\Models;
+
 /**
- * Handler for avatars
+ * Handler for comments
+ *
  * @category	ICMS
  * @package		Administration
- * @subpackage	Avatars
+ * @subpackage	Comments
  */
-class mod_system_AvatarsHandler extends icms_data_avatar_Handler {
+class CommentHandler extends icms_data_comment_Handler {
 
 	/**
 	 *
-	 * Constructs the avatar handler
+	 * Constructs the comment handler
 	 *
 	 * @param obj $db	database instance (@see icms_db_Factory::instance)
 	 */
@@ -26,6 +29,6 @@ class mod_system_AvatarsHandler extends icms_data_avatar_Handler {
 		/* overriding the default table name
 		 * @todo	complete refactoring and use standard table name
 		 */
-		$this->table = $this->db->prefix('avatar');
+		$this->table = $this->db->prefix('xoopscomments');
 	}
 }

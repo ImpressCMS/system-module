@@ -10,6 +10,8 @@
  * @author	modified by UnderDog <underdog@impresscms.org>
  */
 
+namespace ImpressCMS\Modules\System\Models;
+
 /**
  * System positions Class
  *
@@ -19,7 +21,7 @@
  * @author	Gustavo Pilla (aka nekro) <nekro@impresscms.org>
  * @package     ImpressCMS\Modules\System\Class\BlockPositions
  */
-class mod_system_Positions extends icms_view_block_position_Object {
+class BlockPosition extends icms_view_block_position_Object {
 
 	/**
 	 * Constructor

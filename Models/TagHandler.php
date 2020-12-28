@@ -6,6 +6,8 @@
  * @license	http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License (GPL)
  */
 
+namespace ImpressCMS\Modules\System\Models;
+
 /* This may be loaded by other modules - and not just through the cpanel */
 icms_loadLanguageFile('system', 'tags', true);
 
@@ -14,7 +16,7 @@ icms_loadLanguageFile('system', 'tags', true);
  *
  * @package     ImpressCMS\Modules\System\Class\Tags
  */
-class mod_system_TagsHandler extends \ImpressCMS\Core\Models\AbstractExtendedHandler {
+class TagHandler extends \ImpressCMS\Core\Models\AbstractExtendedHandler {
 
 	/**
 	 * Construct the tag handler

@@ -10,6 +10,8 @@
  * @package ImpressCMS\Modules\System\Class\Blocks
  */
 
+namespace ImpressCMS\Modules\System\Models;
+
 /* This may be loaded by other modules - and not just through the cpanel */
 
 use ImpressCMS\Core\Models\AbstractExtendedHandler;
@@ -23,7 +25,7 @@ icms_loadLanguageFile('system', 'blocks', true);
  * @author Gustavo Pilla (aka nekro) <nekro@impresscms.org>
  * @package ImpressCMS\Modules\System\Class\Blocks
  */
-class mod_system_BlocksHandler extends icms_view_block_Handler {
+class BlockHandler extends icms_view_block_Handler {
 
 	private $block_positions;
 	private $modules_name;

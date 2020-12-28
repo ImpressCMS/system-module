@@ -1,31 +1,33 @@
 <?php
 /**
- * Wrapper for administering groups
+ * wrapper class for handling users
  *
  * @copyright 	The ImpressCMS Project <http://www.impresscms.org>
  * @license		GNU General Public License (GPL) <http://www.gnu.org/licenses/old-licenses/gpl-2.0.html>
- * @package     ImpressCMS\Modules\System\Class\Groups
+ * @package     ImpressCMS\Modules\System\Class\Users
  */
 
+namespace ImpressCMS\Modules\System\Models;
+
 /**
- * Handles group administration
+ * Handler for comments
  *
  * @category	ICMS
  * @package		Administration
- * @subpackage	Groups
+ * @subpackage	Users
  */
-class mod_system_GroupsHandler extends icms_member_group_Handler {
+class UserHandler extends icms_member_user_Handler {
 
 	/**
-	 * Constructs the handler class for groups
+	 * Constructs the comment handler
 	 *
-	 * @param  obj $db	database instance (@see icms_db_Factory::instance)
+	 * @param obj $db	database instance (@see icms_db_Factory::instance)
 	 */
 	public function __construct(&$db) {
 		parent::__construct($db);
 		/* overriding the default table name
 		 * @todo	complete refactoring and use standard table name
 		 */
-		$this->table = $this->db->prefix('groups');
+		$this->table = $this->db->prefix('users');
 	}
 }

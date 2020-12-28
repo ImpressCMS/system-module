@@ -1,19 +1,21 @@
 <?php
 /**
- * wrapper for template management
+ * wrapper for image management
  *
  * @copyright	http://www.impresscms.org/ The ImpressCMS Project
  * @license		LICENSE.txt
- * @package     ImpressCMS\Modules\System\Class\TemplatesSets
+ * @package     ImpressCMS\Modules\System\Class\Images
  */
+
+namespace ImpressCMS\Modules\System\Models;
 
 /**
  * Handler for managing images
  * @category	ICMS
  * @package		Administration
- * @subpackage	Templates
+ * @subpackage	Images
  */
-class mod_system_TplsetsHandler extends icms_view_template_set_Handler {
+class ImageHandler extends icms_image_Handler {
 
 	/**
 	 * Construct the handler
@@ -24,6 +26,6 @@ class mod_system_TplsetsHandler extends icms_view_template_set_Handler {
 		/* overriding the default table name
 		 * @todo	complete refactoring and use standard table name
 		 */
-		$this->table = $this->db->prefix('tplset');
+		$this->table = $this->db->prefix('images');
 	}
 }

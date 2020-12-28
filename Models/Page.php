@@ -6,12 +6,14 @@
  * @license	LICENSE.txt
  */
 
+namespace ImpressCMS\Modules\System\Models;
+
 /**
  * Symlinks object
  *
  * @package     ImpressCMS\Modules\System\Class\Pages
  */
-class mod_system_Pages extends icms_data_page_Object {
+class Page extends icms_data_page_Object {
 
 	/**
 	 * Constructor
