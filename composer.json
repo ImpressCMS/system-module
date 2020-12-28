@@ -2,7 +2,7 @@
   "name": "impresscms/system-module",
   "description": "For administration of core settings of the site.",
   "type": "impresscms-module",
-  "license": "GPLv2.0-or-later",
+  "license": "GPL-2.0-or-later",
   "require": {},
   "extra": {
     "credits": "The ImpressCMS Project",
