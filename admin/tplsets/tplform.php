@@ -52,6 +52,7 @@ $config = array(
 	'value' => $tform['tpl_source'],
 	'language' => _LANGCODE,
 	'width' => '100%',
+	'editor_type' => 'source',
 	'height' => '400px',
 	'syntax' => 'html');
 if ($tform['tpl_tplset'] === 'default') {
