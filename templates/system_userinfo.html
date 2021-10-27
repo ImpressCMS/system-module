@@ -26,9 +26,11 @@
 
 <table width="70%" style="margin: 0 auto;" border="0">
   <tr align="center">
-    <td><input type="button" value="<{$lang_editprofile}>" onclick="location='../admin.php'" />
-    <input type="button" value="<{$lang_deleteaccount}>" onclick="location='../admin.php'" />
-    </td>
+	  <td><input type="button" value="<{$lang_editprofile}>"
+				 onclick="location='<{$xoops_url}>/modules/system/admin.php?fct=users&uid=<{$user_uid}>&op=modifyUser'"/>
+		  <input type="button" value="<{$lang_deleteaccount}>"
+				 onclick="location='<{$xoops_url}>/modules/system/admin.php?fct=users&op=delUser&uid=<{$user_uid}>'"/>
+	  </td>
   </tr>
 </table>
 

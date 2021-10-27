@@ -27,16 +27,16 @@
 // URL: http://www.myweb.ne.jp/, http://www.xoops.org/, http://jp.xoops.org/ //
 // Project: The XOOPS Project                                                //
 // ------------------------------------------------------------------------- //
+
 /**
  * Administration of template sets, form file
  *
- * @copyright	http://www.impresscms.org/ The ImpressCMS Project
- * @license		LICENSE.txt
- * @package		System
- * @subpackage	Templates
+ * @copyright    http://www.impresscms.org/ The ImpressCMS Project
+ * @license        LICENSE.txt
+ * @package        System
+ * @subpackage    Templates
  */
 
-use ImpressCMS\Core\Extensions\Editors\EditorsRegistry;
 use ImpressCMS\Core\View\Form\Elements\EditorElement;
 
 if ($tform['tpl_tplset'] != 'default') {
@@ -50,15 +50,15 @@ $form->addElement(new icms_form_elements_Label(_MD_LASTMOD, formatTimestamp($tfo
 $config = array(
 	'name' => 'html',
 	'value' => $tform['tpl_source'],
+	'editor_type' => 'source',
 	'language' => _LANGCODE,
 	'width' => '100%',
-	'editor_type' => 'source',
 	'height' => '400px',
 	'syntax' => 'html');
 if ($tform['tpl_tplset'] === 'default') {
 	$config["is_editable"] = false;
 }
-$form->addElement(new EditorElement(_MD_FILEHTML, $icmsConfig['sourceeditor_default'], $config ));
+$form->addElement(new EditorElement(_MD_FILEHTML, $icmsConfig['sourceeditor_default'], $config));
 $form->addElement(new icms_form_elements_Hidden('id', $tform['tpl_id']));
 $form->addElement(new icms_form_elements_Hidden('op', 'edittpl_go'));
 $form->addElement(new icms_form_elements_Hidden('redirect', 'edittpl'));
