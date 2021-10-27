@@ -36,6 +36,9 @@
  * @subpackage	Templates
  */
 
+use ImpressCMS\Core\Extensions\Editors\EditorsRegistry;
+use ImpressCMS\Core\View\Form\Elements\EditorElement;
+
 if ($tform['tpl_tplset'] != 'default') {
 	$form = new icms_form_Theme(_MD_EDITTEMPLATE, 'template_form', 'admin.php', 'post', true);
 } else {
@@ -49,14 +52,13 @@ $config = array(
 	'value' => $tform['tpl_source'],
 	'language' => _LANGCODE,
 	'width' => '100%',
+	'editor_type' => 'source',
 	'height' => '400px',
 	'syntax' => 'html');
-if ($tform['tpl_tplset'] == 'default') {
+if ($tform['tpl_tplset'] === 'default') {
 	$config["is_editable"] = false;
 }
-$tpl_src = icms_plugins_EditorHandler::getInstance('source')->get($icmsConfig['sourceeditor_default'], $config);
-$tpl_src->setCaption(_MD_FILEHTML);
-$form->addElement($tpl_src);
+$form->addElement(new EditorElement(_MD_FILEHTML, $icmsConfig['sourceeditor_default'], $config ));
 $form->addElement(new icms_form_elements_Hidden('id', $tform['tpl_id']));
 $form->addElement(new icms_form_elements_Hidden('op', 'edittpl_go'));
 $form->addElement(new icms_form_elements_Hidden('redirect', 'edittpl'));
