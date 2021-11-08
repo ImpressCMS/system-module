@@ -1,0 +1,32 @@
+<h4><{'_WHOSONLINE'|trans:[]:'global'}></h4>
+<table width="100%" cellspacing="1" class="outer">
+	<{foreach from=$items item=$item}>
+	<tr class="<{cycle values='odd,even'}>">
+		<td>
+			<{if $item['uid']}>
+			<img src="<{$smarty.const.ICMS_UPLOAD_URL}>/<{$item['avatar']}>" alt="<{$item['uname']}>" width="16"
+				 height="16"/>
+			<{/if}>
+		</td>
+		<td>
+			<{if $item['uid']}>
+			<a href="<{$smarty.const.ICMS_URL}>/userinfo.php?uid=<{$item['uid']}>" target="_parent"
+			   onclick="window.close();"><{$item['uname']}></a>
+			<{else}>
+			<{$anonymousName}>
+			<{/if}>
+		</td>
+		<td>
+			<{$item['module']}>
+		</td>
+		<{if isAdmin}>
+		<td>
+			<{$item['ip']}>
+		</td>
+		<{/if}>
+	</tr>
+	<{/foreach}>
+</table>
+<div style="text-align: right;">
+	<{$nav}>
+</div>

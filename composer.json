@@ -418,6 +418,22 @@
       "50": {
         "file": "system_blank.html",
         "description": ""
+      },
+      "51": {
+        "file": "system_smiles.html",
+        "description": ""
+      },
+      "52": {
+        "file": "system_avatars.html",
+        "description": ""
+      },
+      "53": {
+        "file": "system_who_is_online.html",
+        "description": ""
+      },
+      "54": {
+        "file": "system_send_to_friend.html",
+        "description": ""
       }
     },
     "services": {
