@@ -1,0 +1,15 @@
+<{if !empty($errors)}>
+<ul class="errorMsg alert alert-danger" style="display: block;">
+	<{foreach from=$errors item=$error}>
+	<li style="display: block;"><{$error}></li>
+	<{/foreach}>
+</ul>
+<{/if}>
+<{if isset($form)}>
+<{$form}>
+<{else}>
+<h4><{$message}></h4>
+<div style="text-align: center">
+	<button type="button" onclick="window.close();"><{'_CLOSE'|trans:[]:'global'}></button>
+</div>
+<{/if}>

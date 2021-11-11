@@ -1,0 +1,19 @@
+<script type="text/javascript">
+	function selectSmile(tag) {
+		var smileSelector = document.getElementById('icms-smile-selector');
+		var targetId = smileSelector.dataset["targetId"];
+		var element = window.opener.getElementById(targetId);
+
+		element.value += tag.dataset['smile'];
+	}
+</script>
+<h4><{'_MSC_SMILIES'|trans:[]:'misc'}></h4>
+<ul id="icms-smile-selector" style="display: flex" data-target-id="<{$target}>">
+	<{foreach from=$smiles item=smile}>
+	<li style="display: block; margin-right: 2em; margin-bottom: 2em;">
+		<a href="javascript: selectSmile(this);" data-smile="<{$smile.code}>" title="<{$smile.emotion}>">
+			<img src="<{$smarty.const.ICMS_UPLOAD_URL}>/<{$smile.smile_url}>" alt="<{$smile.emotion}>"/>
+		</a>
+	</li>
+	<{/foreach}>
+</ul>

@@ -1,0 +1,68 @@
+<style type="text/css">
+	.avatar_selector {
+		display: flex;
+	}
+
+	.avatar_selector .item {
+		padding: 10px;
+		vertical-align: top;
+	}
+
+	.avatar_selector .item .img {
+		border-style: solid;
+		border-color: transparent;
+		border-width: 1px;
+
+	width:
+
+	<
+	{
+		$ avatar_width
+	}
+	> px
+
+	;
+	height:
+
+	<
+	{
+		$ avatar_height
+	}
+	> px
+
+	;
+	display: block
+
+	;
+	}
+	.avatar_selector .item.selected .img {
+		border-color: blue;
+	}
+</style>
+<h4><{'_MSC_AVAVATARS'|trans:[]:'misc'}></h4>
+<ul class="avatar_selector">
+	<{foreach from=$avatars key=$file item=$name name="avatars"}>
+	<li style="display: block;">
+		<a href="javascript: selectAvatar(<{$smarty.foreach.avatars.index}>, '<{$smarty.const.ICMS_UPLOAD_URL}>/<{$avatar.file}>');">
+			<div class="item">
+				<div class="img">
+					<img src="<{$smarty.const.ICMS_UPLOAD_URL}>/<{$file}>" alt="<{$name}>"/>
+				</div>
+			</div>
+			<div style="text-align: center;"><{$name}></div>
+		</a>
+	</li>
+	<{/foreach}>
+</ul>
+<script type="application/javascript">
+	function selectAvatar(counter, src) {
+		window.opener.document.getElementById("avatar").src = src;
+		window.opener.document.getElementById("user_avatar").options[counter].selected = true;
+		window.opener.document.getElementById("user_avatar").focus();
+		window.close();
+
+		return false;
+	}
+
+	document.querySelectorAll('.avatar_selector .item')[window.opener.document.getElementById("user_avatar").selectedIndex].classList.add('selected');
+</script>
