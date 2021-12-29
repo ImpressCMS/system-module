@@ -75,21 +75,25 @@
         "show_func": "b_system_user_show",
         "edit_func": "b_system_user_edit",
         "options": "0",
-        "template": "system_block_user.html"
+        "template": "system_block_user.html",
+        "visible": true
       },
       "2": {
         "file": "system_blocks.php",
         "name": "_MI_SYSTEM_BNAME3",
         "description": "",
         "show_func": "b_system_login_show",
-        "template": "system_block_login.html"
+        "template": "system_block_login.html",
+        "visible": true
       },
       "3": {
         "file": "system_blocks.php",
         "name": "_MI_SYSTEM_BNAME4",
         "description": "",
         "show_func": "b_system_search_show",
-        "template": "system_block_search.html"
+        "template": "system_block_search.html",
+        "position": "canvas_right",
+        "visible": true
       },
       "4": {
         "file": "system_waiting.php",
@@ -98,14 +102,17 @@
         "show_func": "b_system_waiting_show",
         "edit_func": "b_system_waiting_edit",
         "options": "1|5",
-        "template": "system_block_waiting.html"
+        "template": "system_block_waiting.html",
+        "position": "canvas_left_admin",
+        "visible": true
       },
       "5": {
         "file": "system_blocks.php",
         "name": "_MI_SYSTEM_BNAME6",
         "description": "",
         "show_func": "b_system_main_show",
-        "template": "system_block_mainmenu.html"
+        "template": "system_block_mainmenu.html",
+        "visible": true
       },
       "6": {
         "file": "system_blocks.php",
@@ -121,7 +128,9 @@
         "name": "_MI_SYSTEM_BNAME8",
         "description": "",
         "show_func": "b_system_online_show",
-        "template": "system_block_online.html"
+        "template": "system_block_online.html",
+        "position": "canvas_left_admin",
+        "visible": true
       },
       "8": {
         "file": "system_blocks.php",
@@ -130,7 +139,9 @@
         "show_func": "b_system_topposters_show",
         "edit_func": "b_system_topposters_edit",
         "options": "10|1",
-        "template": "system_block_topusers.html"
+        "template": "system_block_topusers.html",
+        "position": "canvas_right_admin",
+        "visible": true
       },
       "9": {
         "file": "system_blocks.php",
@@ -139,7 +150,9 @@
         "show_func": "b_system_newmembers_show",
         "edit_func": "b_system_newmembers_edit",
         "options": "10|1|1",
-        "template": "system_block_newusers.html"
+        "template": "system_block_newusers.html",
+        "position": "canvas_right_admin",
+        "visible": true
       },
       "10": {
         "file": "system_blocks.php",
@@ -164,7 +177,8 @@
         "show_func": "b_system_themes_show",
         "edit_func": "b_system_themes_edit",
         "options": "0|80",
-        "template": "system_block_themes.html"
+        "template": "system_block_themes.html",
+        "visible": true
       },
       "13": {
         "file": "system_blocks.php",
@@ -180,28 +194,36 @@
         "show_func": "b_system_social_show",
         "edit_func": "b_system_social_edit",
         "options": "1|1|1|1|0|0|0|0|0|0|0|0|0|1|0|0|0|0|1|0|1|0|0|1|0|0|0|0|0|0|0|0",
-        "template": "system_block_socialbookmark.html"
+        "template": "system_block_socialbookmark.html",
+        "position": "page_bottomcenter",
+        "visible": true
       },
       "15": {
         "file": "system_admin_blocks.php",
         "name": "_MI_SYSTEM_BNAME101",
         "description": "",
         "show_func": "b_system_admin_warnings_show",
-        "template": "system_admin_block_warnings.html"
+        "template": "system_admin_block_warnings.html",
+        "position": "page_topcenter_admin",
+        "visible": true
       },
       "16": {
         "file": "system_admin_blocks.php",
         "name": "_MI_SYSTEM_BNAME102",
         "description": "",
         "show_func": "b_system_admin_cp_show",
-        "template": "system_admin_block_cp.html"
+        "template": "system_admin_block_cp.html",
+        "position": "page_topleft_admin",
+        "visible": true
       },
       "17": {
         "file": "system_admin_blocks.php",
         "name": "_MI_SYSTEM_BNAME103",
         "description": "",
         "show_func": "b_system_admin_modules_show",
-        "template": "system_admin_block_modules.html"
+        "template": "system_admin_block_modules.html",
+        "position": "page_topright_admin",
+        "visible": true
       },
       "18": {
         "file": "system_blocks.php",
