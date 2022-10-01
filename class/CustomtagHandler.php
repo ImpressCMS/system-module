@@ -2,42 +2,41 @@
 /**
  * ImpressCMS Customtags
  *
- * @copyright    The ImpressCMS Project http://www.impresscms.org/
- * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License (GPL)
- * @since    1.1
- * @author    marcan <marcan@impresscms.org>
+ * @copyright	The ImpressCMS Project http://www.impresscms.org/
+ * @license	http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License (GPL)
+ * @since	1.1
+ * @author	marcan <marcan@impresscms.org>
  * @package     ImpressCMS\Modules\System\Class\CustomTag
  */
+
+namespace ImpressCMS\Modules\System\Models;
 
 defined('ICMS_CUSTOMTAG_TYPE_XCODES') || define('ICMS_CUSTOMTAG_TYPE_XCODES', 1);
 defined('ICMS_CUSTOMTAG_TYPE_HTML') || define('ICMS_CUSTOMTAG_TYPE_HTML', 2);
 defined('ICMS_CUSTOMTAG_TYPE_PHP') || define('ICMS_CUSTOMTAG_TYPE_PHP', 3);
-
 
 /**
  * Handler for the custom tag object
  *
  * @package     ImpressCMS\Modules\System\Class\CustomTag
  */
-class mod_system_CustomtagHandler extends \ImpressCMS\Core\Models\AbstractExtendedHandler
-{
+class CustomTagHandler extends \ImpressCMS\Core\Models\AbstractExtendedHandler {
 	private $_objects = false;
 
 	/**
 	 * Constructor
 	 * @param object $db
 	 */
-	public function __construct($db)
-	{
+	public function __construct($db) {
 		parent::__construct($db, 'customtag', 'customtagid', 'name', 'description', 'system');
-		$this->addPermission('view_customtag', _CO_ICMS_CUSTOMTAG_PERMISSION_VIEW, _CO_ICMS_CUSTOMTAG_PERMISSION_VIEW_DSC);
+		
+		$this->addPermission('view_customtag', '_CO_ICMS_CUSTOMTAG_PERMISSION_VIEW', '_CO_ICMS_CUSTOMTAG_PERMISSION_VIEW_DSC');
 	}
 
 	/**
 	 * Return an array of custom tag types
 	 */
-	public function getCustomtag_types()
-	{
+	public function getCustomtag_types() {
 		$ret = array(ICMS_CUSTOMTAG_TYPE_XCODES => 'BB-Codes', ICMS_CUSTOMTAG_TYPE_HTML => 'HTML', ICMS_CUSTOMTAG_TYPE_PHP => 'PHP');
 		return $ret;
 	}
@@ -45,8 +44,7 @@ class mod_system_CustomtagHandler extends \ImpressCMS\Core\Models\AbstractExtend
 	/**
 	 * Return an array of custom tags, indexed by name
 	 */
-	public function getCustomtagsByName()
-	{
+	public function getCustomtagsByName() {
 		if (!$this->_objects) {
 			global $icmsConfig;
 
