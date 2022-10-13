@@ -1,15 +1,19 @@
 <?php
+
 /**
  * ImpressCMS Customtags
  *
- * @copyright	The ImpressCMS Project http://www.impresscms.org/
- * @license	http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License (GPL)
- * @since	1.1
- * @author	marcan <marcan@impresscms.org>
+ * @copyright    The ImpressCMS Project http://www.impresscms.org/
+ * @license    http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License (GPL)
+ * @since    1.1
+ * @author    marcan <marcan@impresscms.org>
  * @package     ImpressCMS\Modules\System\Class\CustomTag
  */
 
 namespace ImpressCMS\Modules\System\Models;
+
+use ImpressCMS\Core\Models\AbstractExtendedHandler;
+use icms_db_criteria_Compo;
 
 defined('ICMS_CUSTOMTAG_TYPE_XCODES') || define('ICMS_CUSTOMTAG_TYPE_XCODES', 1);
 defined('ICMS_CUSTOMTAG_TYPE_HTML') || define('ICMS_CUSTOMTAG_TYPE_HTML', 2);
@@ -20,55 +24,58 @@ defined('ICMS_CUSTOMTAG_TYPE_PHP') || define('ICMS_CUSTOMTAG_TYPE_PHP', 3);
  *
  * @package     ImpressCMS\Modules\System\Class\CustomTag
  */
-class CustomTagHandler extends \ImpressCMS\Core\Models\AbstractExtendedHandler {
-	private $_objects = false;
+class CustomTagHandler extends AbstractExtendedHandler
+{
+    private $_objects = false;
 
-	/**
-	 * Constructor
-	 * @param object $db
-	 */
-	public function __construct($db) {
-		parent::__construct($db, 'customtag', 'customtagid', 'name', 'description', 'system');
-		
-		$this->addPermission('view_customtag', '_CO_ICMS_CUSTOMTAG_PERMISSION_VIEW', '_CO_ICMS_CUSTOMTAG_PERMISSION_VIEW_DSC');
-	}
+    /**
+     * Constructor
+     * @param object $db
+     */
+    public function __construct($db)
+    {
+        parent::__construct($db, 'customtag', 'customtagid', 'name', 'description', 'system');
 
-	/**
-	 * Return an array of custom tag types
-	 */
-	public function getCustomtag_types() {
-		$ret = array(ICMS_CUSTOMTAG_TYPE_XCODES => 'BB-Codes', ICMS_CUSTOMTAG_TYPE_HTML => 'HTML', ICMS_CUSTOMTAG_TYPE_PHP => 'PHP');
-		return $ret;
-	}
+        $this->addPermission('view_customtag', '_CO_ICMS_CUSTOMTAG_PERMISSION_VIEW', '_CO_ICMS_CUSTOMTAG_PERMISSION_VIEW_DSC');
+    }
 
-	/**
-	 * Return an array of custom tags, indexed by name
-	 */
-	public function getCustomtagsByName() {
-		if (!$this->_objects) {
-			global $icmsConfig;
+    /**
+     * Return an array of custom tag types
+     */
+    public function getCustomtag_types()
+    {
+        return [ICMS_CUSTOMTAG_TYPE_XCODES => 'BB-Codes', ICMS_CUSTOMTAG_TYPE_HTML => 'HTML', ICMS_CUSTOMTAG_TYPE_PHP => 'PHP'];
+    }
 
-			$ret = array();
+    /**
+     * Return an array of custom tags, indexed by name
+     */
+    public function getCustomtagsByName()
+    {
+        if (!$this->_objects) {
+            global $icmsConfig;
 
-			$criteria = new icms_db_criteria_Compo();
+            $ret = array();
 
-			$criteria_language = new icms_db_criteria_Compo();
-			$criteria_language->add(new icms_db_criteria_Item('language', $icmsConfig['language']));
-			$criteria_language->add(new icms_db_criteria_Item('language', 'all'), 'OR');
-			$criteria->add($criteria_language);
+            $criteria = new icms_db_criteria_Compo();
 
-			$icms_permissions_handler = new icms_ipf_permission_Handler($this);
-			$granted_ids = $icms_permissions_handler->getGrantedItems('view_customtag');
+            $criteria_language = new icms_db_criteria_Compo();
+            $criteria_language->add(new icms_db_criteria_Item('language', $icmsConfig['language']));
+            $criteria_language->add(new icms_db_criteria_Item('language', 'all'), 'OR');
+            $criteria->add($criteria_language);
 
-			if ($granted_ids && count($granted_ids) > 0) {
-				$criteria->add(new icms_db_criteria_Item('customtagid', '(' . implode(', ', $granted_ids) . ')', 'IN'));
-				$customtagsObj = $this->getObjects($criteria, true);
-				foreach ($customtagsObj as $customtagObj) {
-					$ret[$customtagObj->name] = $customtagObj;
-				}
-			}
-			$this->_objects = $ret;
-		}
-		return $this->_objects;
-	}
+            $icms_permissions_handler = new icms_ipf_permission_Handler($this);
+            $granted_ids = $icms_permissions_handler->getGrantedItems('view_customtag');
+
+            if ($granted_ids && count($granted_ids) > 0) {
+                $criteria->add(new icms_db_criteria_Item('customtagid', '(' . implode(', ', $granted_ids) . ')', 'IN'));
+                $customtagsObj = $this->getObjects($criteria, true);
+                foreach ($customtagsObj as $customtagObj) {
+                    $ret[$customtagObj->name] = $customtagObj;
+                }
+            }
+            $this->_objects = $ret;
+        }
+        return $this->_objects;
+    }
 }
