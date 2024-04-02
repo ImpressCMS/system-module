@@ -22,8 +22,6 @@ jobs:
         database:
           - mysql:5.6
           - mariadb:10.1
-        impresscms_version:
-          - 2.0.x
         composer_version:
           - 2
 
@@ -45,7 +43,6 @@ jobs:
       - name: Testing addon...
         uses: impresscms-dev/test-impresscms-addon-action@v0.2
         with:
-          impresscms_version: ${{ matrix.impresscms_version }}
           php_version: ${{ matrix.php_version }}
           composer_version: ${{ matrix.composer_version }}
           database_type: pdo.mysql
