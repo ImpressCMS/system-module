@@ -19,11 +19,15 @@ jobs:
         php_version:
           - 8.0
           - 8.1
+          - 8.2
+          - 8.3
         database:
           - mysql:5.6
           - mariadb:10.1
         composer_version:
           - 2
+        impresscms_version:
+          - dev-TNG
 
     services:
       mysql:
@@ -45,6 +49,7 @@ jobs:
         with:
           php_version: ${{ matrix.php_version }}
           composer_version: ${{ matrix.composer_version }}
+          impresscms_version: ${{ matrix.impresscms_version }}
           database_type: pdo.mysql
           database_name: icms
           database_user: root
